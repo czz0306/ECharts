@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts练习</title>
+    <style>
+        canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="300"></canvas>
+</body>
+</html>
+<script src="js/echarts.min.js"></script>
+<script>
+    var c=document.getElementById("myCanvas");
+    var myCanvas=echarts.init(c);
+    myCanvas.setOption({
+        title:{
+            text:"echarts练习"
+        },
+        legend:{/*图例*/
+            data:["09-08","09-09"]
+        },
+        xAxis:{
+            data:["一组","二组","三组","四组"]
+        },
+        yAxis:{},
+        series:[
+            {
+                name:"09-08",
+                type:"bar",
+                data:[91,90,95,98]
+            },
+            {
+                name:"09-09",
+                type:"bar",
+                data:[95,100,90,91]
+            }
+        ],
+        toolbox:{
+            feature:{
+                 magicType: {
+                    type: ['stack','title']
+                },
+                saveAsImage: {
+                    pixelPatio:2
+                },
+                dataView: {
+                    readOnly: false
+                }
+            }
+        },
+        tooltip:{
+            axisPointer:{
+                type:"shadow"
+            }
+        }
+
+    })
+</script>
